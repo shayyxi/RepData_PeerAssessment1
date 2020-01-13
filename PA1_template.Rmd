@@ -7,6 +7,9 @@
 library(dplyr)
 library(ggplot2)
 library(knitr)
+temp<-"activity"
+download.file("https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip",temp,mode="wb")
+unzip(temp,"activity.csv")
 df_na<-read.csv("activity.csv")
 df<-subset(df_na,!(is.na(steps)))
 ```
